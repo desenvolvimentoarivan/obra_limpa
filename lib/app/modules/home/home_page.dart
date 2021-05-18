@@ -42,6 +42,8 @@ class HomePage extends GetView<HomeController> {
                   title: Text("Início"),
                   //subtitle: Text("meus favoritos..."),
                   //trailing: Icon(Icons.arrow_forward),
+                  //subtitle: Text("meus favoritos..."),
+                  //trailing: Icon(Icons.arrow_forward),
                   onTap: () {
                     debugPrint('toquei no drawer');
                   }),
