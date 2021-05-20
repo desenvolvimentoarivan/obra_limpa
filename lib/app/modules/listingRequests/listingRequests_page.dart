@@ -6,6 +6,7 @@ class ListingRequestPage extends GetView<ListingRequestController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF0F0F0),
       body: Container(
         child: Center(
           child: Text('ListingRequestPage'),
