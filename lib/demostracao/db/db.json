@@ -1,0 +1,36 @@
+{
+    "pendentes":[
+    {
+      "cliente" : "Arivan",
+      "produto" : "Caçamba 3m³",
+      "telefone" : "(84)3316-5426",
+      "tipo" : "Entrega",
+      "total" : "R$ 20,00 (Dinheiro)",
+      "endereco" : "Rua do Pinhão, Rincão, Mossoró, RN"
+    },
+    {
+        "cliente" : "Cládio",
+        "produto" : "Caçamba 5m³",
+        "telefone" : "(84)3216-4785",
+        "tipo" : "Entrega",
+        "total" : "R$ 6,00 (Dinheiro)",
+        "endereco" : "Rua do Atletico, Centro, Mossoró, RN"
+      },
+      {
+          "cliente" : "Terceiro",
+          "produto" : "Caçamba 10m³",
+          "telefone" : "(84)4478-1245",
+          "tipo" : "Entrega",
+          "total" : "R$ 150,00 (Cartão)",
+          "endereco" : "Rua das Frutas, Alto de São Manuel, Mossoró, RN"
+        },
+        {
+            "cliente" : "Arivan",
+            "produto" : "Caçamba 3m³",
+            "telefone" : "(84)3316-5426",
+            "tipo" : "Entrega",
+            "total" : "R$ 20,00 (Dinheiro)",
+            "endereco" : "Rua do Pinhão, Rincão, Mossoró, RN"
+          }
+]
+  }

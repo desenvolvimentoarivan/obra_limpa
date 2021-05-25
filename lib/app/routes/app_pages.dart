@@ -4,6 +4,7 @@ import 'package:obra_limpa/app/modules/auth/pages/sign_up.dart';
 import 'package:obra_limpa/app/modules/historic/historic_page.dart';
 import 'package:obra_limpa/app/modules/home/home_binding.dart';
 import 'package:obra_limpa/app/modules/home/home_page.dart';
+import 'package:obra_limpa/app/modules/listing/listing_biding.dart';
 import 'package:obra_limpa/app/modules/listing/listing_page.dart';
 import 'package:obra_limpa/app/modules/listingRequests/listingRequests_page.dart';
 import 'package:obra_limpa/app/modules/splash/pages/splash.dart';
@@ -41,8 +42,8 @@ class AppPages {
       page: () => ListingRequestPage(),
     ),
     GetPage(
-      name: Routes.LISTING,
-      page: () => ListingPage(),
-    ),
+        name: Routes.LISTING,
+        page: () => ListingPage(),
+        binding: ListingBiding()),
   ];
 }

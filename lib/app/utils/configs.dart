@@ -2,10 +2,14 @@ import 'exports.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 
-const String rails_server =
-    "https://mossoro.amigodopeito.dunnastecnologia.com.br/";
+//const String rails_server =
+//  "https://mossoro.amigodopeito.dunnastecnologia.com.br/";
 
-// const String rails_server = "http://192.168.1.4:3000/";
+//const String rails_server = "http://127.0.0.1:3000/";
+
+//const String rails_server = "http://192.168.2.162:3000/";
+const String rails_server =
+    "https://my-json-server.typicode.com/desenvolvimentoarivan/apiFake/";
 
 extension CustomMaskedTextController on MaskedTextController {
   String get withoutMask => this.text.replaceAll(RegExp(r'[^\d]'), '');

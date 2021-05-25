@@ -1,13 +1,3 @@
-// To parse this JSON data, do
-//
-//     final demoLista = demoListaFromJson(jsonString);
-
-import 'dart:convert';
-
-DemoLista demoListaFromJson(String str) => DemoLista.fromJson(json.decode(str));
-
-String demoListaToJson(DemoLista data) => json.encode(data.toJson());
-
 class DemoLista {
   DemoLista({
     this.cliente,

@@ -16,4 +16,11 @@ class ListingController extends GetxController {
   fetch() async {
     demolist = await provider.getAll();
   }
+
+  @override
+  onInit() async {
+    await fetch();
+
+    super.onInit();
+  }
 }

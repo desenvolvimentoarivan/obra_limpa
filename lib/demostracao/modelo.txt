@@ -1,5 +1,5 @@
 {
-  "solicitacao":{
+  "pendentes":{
     "cliente" : "Arivan",
     "produto" : "Caçamba 3m³",
     "telefone" : "(84)3316-5426",
@@ -8,3 +8,6 @@
     "endereco" : "Rua do Pinhão, Rincão, Mossoró, RN"
   }
 }
+
+
+json-server --watch db.json
