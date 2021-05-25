@@ -49,8 +49,9 @@ class ButtonWidget extends StatelessWidget {
           ),
         ),
         child: child,
-        disabledColor:
-            loading ? CustomColors.secondaryColor : CustomColors.terciaryColor,
+        disabledColor: loading
+            ? CustomColors.secondaryColor
+            : CustomColors.neutralColor200,
         color: buttonColor ?? Colors.white,
         onPressed: (!enabled || loading) ? null : onTap,
       ),

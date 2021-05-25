@@ -1,0 +1,10 @@
+{
+  "solicitacao":{
+    "cliente" : "Arivan",
+    "produto" : "Caçamba 3m³",
+    "telefone" : "(84)3316-5426",
+    "tipo" : "Entrega",
+    "total" : "R$ 20,00 (Dinheiro)",
+    "endereco" : "Rua do Pinhão, Rincão, Mossoró, RN"
+  }
+}

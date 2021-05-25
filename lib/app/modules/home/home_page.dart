@@ -29,47 +29,35 @@ class HomePage extends GetView<HomeController> {
                   'assets/images/logoBarra.png',
                 ),
               ),
-              ListTile(
+              /*ListTile(
                   leading: Icon(CupertinoIcons.person_alt_circle),
                   title: Text("Perfil"),
-                  //subtitle: Text("Perfil do usuário..."),
-                  //trailing: Icon(Icons.arrow_forward),
                   onTap: () {
                     Navigator.pop(context);
-                  }),
+                  }),*/
               ListTile(
                   leading: Icon(CupertinoIcons.home),
                   title: Text("Início"),
-                  //subtitle: Text("meus favoritos..."),
-                  //trailing: Icon(Icons.arrow_forward),
-                  //subtitle: Text("meus favoritos..."),
-                  //trailing: Icon(Icons.arrow_forward),
                   onTap: () {
-                    debugPrint('toquei no drawer');
+                    controller.toListingPage(context);
                   }),
               ListTile(
                   leading: Icon(CupertinoIcons.list_bullet),
                   title: Text("Lista"),
-                  //subtitle: Text("meus favoritos..."),
-                  //trailing: Icon(Icons.arrow_forward),
                   onTap: () {
-                    debugPrint('toquei no drawer');
+                    controller.toListRequestPage(context);
                   }),
               ListTile(
                   leading: Icon(CupertinoIcons.list_bullet_below_rectangle),
                   title: Text("Histórico"),
-                  //subtitle: Text("meus favoritos..."),
-                  //trailing: Icon(Icons.arrow_forward),
                   onTap: () {
-                    debugPrint('toquei no drawer');
+                    controller.toHistoricPage(context);
                   }),
               ListTile(
                   leading: Icon(CupertinoIcons.arrow_left_circle),
                   title: Text("Sair"),
-                  //subtitle: Text("meus favoritos..."),
-                  //trailing: Icon(Icons.arrow_forward),
                   onTap: () {
-                    debugPrint('toquei no drawer');
+                    controller.toSignInPage(context);
                   }),
             ],
           ),

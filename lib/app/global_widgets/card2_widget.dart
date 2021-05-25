@@ -1,6 +1,6 @@
 import 'package:obra_limpa/app/utils/exports.dart';
 
-class CardWidget extends StatelessWidget {
+class CardWidget2 extends StatelessWidget {
   final String cliente;
   final String produto;
   final String telefone;
@@ -8,17 +8,19 @@ class CardWidget extends StatelessWidget {
   final String total;
   final String endereco;
   final Function entregue;
+  final Function cancelado;
 
-  const CardWidget({
-    Key key,
-    this.cliente,
-    this.produto,
-    this.telefone,
-    this.tipo,
-    this.total,
-    this.endereco,
-    this.entregue,
-  }) : super(key: key);
+  const CardWidget2(
+      {Key key,
+      this.cliente,
+      this.produto,
+      this.telefone,
+      this.tipo,
+      this.total,
+      this.endereco,
+      this.entregue,
+      this.cancelado})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -192,17 +194,34 @@ class CardWidget extends StatelessWidget {
                     SizedBox(
                       height: SizeConfig.vPadding(),
                     ),
-                    Container(
-                      width: SizeConfig.widthPercent(100),
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(10.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: SizeConfig.widthPercent(42),
+                          child: RaisedButton(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(10.0),
+                            ),
+                            color: Color(0xFFFF1919),
+                            textColor: Colors.white,
+                            onPressed: cancelado,
+                            child: Text('CANCELADO'),
+                          ),
                         ),
-                        color: Color(0xFF005EB6),
-                        textColor: Colors.white,
-                        onPressed: entregue,
-                        child: Text('Pegar Entrega'),
-                      ),
+                        Container(
+                          width: SizeConfig.widthPercent(42),
+                          child: RaisedButton(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(10.0),
+                            ),
+                            color: Color(0xFF005EB6),
+                            textColor: Colors.white,
+                            onPressed: entregue,
+                            child: Text('ENTREGUE'),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
