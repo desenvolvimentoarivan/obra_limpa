@@ -31,7 +31,7 @@ class ListProvider {
     var response = await dioService.get('pendentes');
 
     if (response.statusCode == 200) {
-      print(response);
+      // print(response);
 
       return response.data
           .map<DemoLista>((data) => DemoLista.fromJson(data))

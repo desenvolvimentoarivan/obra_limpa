@@ -1,6 +1,6 @@
 import 'package:obra_limpa/app/utils/exports.dart';
 
-class CardWidget extends StatelessWidget {
+class CardWidget2 extends StatelessWidget {
   final String cliente;
   final String produto;
   final String telefone;
@@ -8,17 +8,21 @@ class CardWidget extends StatelessWidget {
   final String total;
   final String endereco;
   final Function entregue;
+  final Function cancelado;
+  final Function mapa;
 
-  const CardWidget({
-    Key key,
-    this.cliente,
-    this.produto,
-    this.telefone,
-    this.tipo,
-    this.total,
-    this.endereco,
-    this.entregue,
-  }) : super(key: key);
+  const CardWidget2(
+      {Key key,
+      this.cliente,
+      this.produto,
+      this.telefone,
+      this.tipo,
+      this.total,
+      this.endereco,
+      this.entregue,
+      this.cancelado,
+      this.mapa})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,9 +64,6 @@ class CardWidget extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: SizeConfig.vPadding(),
-                    ),
                     Row(
                       children: [
                         Text(
@@ -81,6 +82,29 @@ class CardWidget extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 14,
+                          ),
+                        ),
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(
+                                width: SizeConfig.vPadding(),
+                              ),
+                              Container(
+                                width: SizeConfig.widthPercent(20),
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(10.0),
+                                  ),
+                                  color: Color(0xFF005EB6),
+                                  textColor: Colors.white,
+                                  onPressed: entregue,
+                                  child: Text('ADD'),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -199,11 +223,40 @@ class CardWidget extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(10.0),
                         ),
-                        color: Color(0xFF005EB6),
+                        color: Colors.green,
                         textColor: Colors.white,
-                        onPressed: entregue,
-                        child: Text('Pegar Entrega'),
+                        onPressed: mapa,
+                        child: Text('MAPA'),
                       ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: SizeConfig.widthPercent(42),
+                          child: RaisedButton(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(10.0),
+                            ),
+                            color: Color(0xFFFF1919),
+                            textColor: Colors.white,
+                            onPressed: cancelado,
+                            child: Text('CANCELADO'),
+                          ),
+                        ),
+                        Container(
+                          width: SizeConfig.widthPercent(42),
+                          child: RaisedButton(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(10.0),
+                            ),
+                            color: Color(0xFF005EB6),
+                            textColor: Colors.white,
+                            onPressed: entregue,
+                            child: Text('ENTREGUE'),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

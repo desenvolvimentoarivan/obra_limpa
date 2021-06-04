@@ -2,11 +2,13 @@ import 'package:obra_limpa/app/routes/app_pages.dart';
 import 'package:obra_limpa/app/utils/exports.dart';
 
 class HomeController extends GetxController {
-  var tabIndex = 0;
+  final _tabIndex = 0.obs;
+
+  set tabIndex(value) => this._tabIndex.value = value;
+  get tabIndex => this._tabIndex.value;
 
   void changeTabIndex(int index) {
     tabIndex = index;
-    update();
   }
 
   void toSignInPage(BuildContext context) {
@@ -29,7 +31,7 @@ class HomeController extends GetxController {
   }
 
   void toHomePage(BuildContext context) {
-    Get.to(Routes.HOME);
+    Get.toNamed(Routes.HOME);
     Navigator.pop(context);
   }
 }

@@ -7,8 +7,6 @@ import 'package:obra_limpa/app/services/dio_service.dart';
 import 'package:obra_limpa/demostracao/model/lista_model.dart';
 
 class ListingPage extends GetView<ListingController> {
-  final ListingController controller =
-      Get.put(ListingController(provider: ListProvider(apiClient: dioService)));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +18,10 @@ class ListingPage extends GetView<ListingController> {
             return CardWidget(
               cliente: controller.demolist[index].cliente,
               endereco: controller.demolist[index].endereco,
-              entregue: () {},
+              entregue: () {
+                controller.pegarEntrega(
+                    context, controller.demolist[index], index);
+              },
               produto: controller.demolist[index].produto,
               telefone: controller.demolist[index].telefone,
               tipo: controller.demolist[index].tipo,

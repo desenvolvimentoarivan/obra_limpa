@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:obra_limpa/app/data/providers/list_provider.dart';
 import 'package:obra_limpa/app/modules/historic/historic_controller.dart';
 import 'package:obra_limpa/app/modules/home/home_controller.dart';
 import 'package:obra_limpa/app/modules/listing/listing_controller.dart';
@@ -9,5 +10,9 @@ class HomeBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => HomeController());
+    Get.lazyPut(
+        () => ListingController(provider: ListProvider(apiClient: dioService)));
+    Get.lazyPut(() => ListingRequestController());
+    Get.lazyPut(() => HistoricController());
   }
 }

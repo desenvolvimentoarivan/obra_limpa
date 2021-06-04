@@ -1,26 +1,22 @@
 import 'package:obra_limpa/app/utils/exports.dart';
 
-class CardWidget2 extends StatelessWidget {
+class CardHistoric extends StatelessWidget {
   final String cliente;
   final String produto;
   final String telefone;
   final String tipo;
   final String total;
   final String endereco;
-  final Function entregue;
-  final Function cancelado;
 
-  const CardWidget2(
-      {Key key,
-      this.cliente,
-      this.produto,
-      this.telefone,
-      this.tipo,
-      this.total,
-      this.endereco,
-      this.entregue,
-      this.cancelado})
-      : super(key: key);
+  const CardHistoric({
+    Key key,
+    this.cliente,
+    this.produto,
+    this.telefone,
+    this.tipo,
+    this.total,
+    this.endereco,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -181,47 +177,19 @@ class CardWidget2 extends StatelessWidget {
                         SizedBox(
                           width: SizeConfig.vPadding(),
                         ),
-                        Text(
-                          endereco,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 14,
+                        Flexible(
+                          child: Text(
+                            endereco,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 14,
+                            ),
                           ),
                         ),
                       ],
                     ),
                     SizedBox(
                       height: SizeConfig.vPadding(),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: SizeConfig.widthPercent(42),
-                          child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(10.0),
-                            ),
-                            color: Color(0xFFFF1919),
-                            textColor: Colors.white,
-                            onPressed: cancelado,
-                            child: Text('CANCELADO'),
-                          ),
-                        ),
-                        Container(
-                          width: SizeConfig.widthPercent(42),
-                          child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(10.0),
-                            ),
-                            color: Color(0xFF005EB6),
-                            textColor: Colors.white,
-                            onPressed: entregue,
-                            child: Text('ENTREGUE'),
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),

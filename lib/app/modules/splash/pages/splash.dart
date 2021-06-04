@@ -11,11 +11,6 @@ class SplashPage extends StatelessWidget {
       children: <Widget>[
         SplashScreen(
           seconds: 2,
-          gradientBackground: RadialGradient(
-            colors: [
-              CustomColors.backgroundColor,
-            ],
-          ),
           navigateAfterSeconds: Routes.SIGN_IN,
           loaderColor: Colors.transparent,
         ),
