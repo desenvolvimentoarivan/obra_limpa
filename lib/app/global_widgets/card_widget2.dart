@@ -92,7 +92,8 @@ class CardWidget2 extends StatelessWidget {
                                 width: SizeConfig.vPadding(),
                               ),
                               Container(
-                                width: SizeConfig.widthPercent(20),
+                                width: SizeConfig.widthPercent(30),
+                                height: 30,
                                 child: RaisedButton(
                                   shape: RoundedRectangleBorder(
                                     borderRadius:
@@ -101,16 +102,13 @@ class CardWidget2 extends StatelessWidget {
                                   color: Color(0xFF005EB6),
                                   textColor: Colors.white,
                                   onPressed: entregue,
-                                  child: Text('ADD'),
+                                  child: Text('Adicionar'),
                                 ),
                               ),
                             ],
                           ),
                         ),
                       ],
-                    ),
-                    SizedBox(
-                      height: SizeConfig.vPadding(),
                     ),
                     Row(
                       children: [
@@ -223,7 +221,7 @@ class CardWidget2 extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(10.0),
                         ),
-                        color: Colors.green,
+                        color: Colors.black,
                         textColor: Colors.white,
                         onPressed: mapa,
                         child: Text('MAPA'),

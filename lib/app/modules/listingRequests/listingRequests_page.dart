@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obra_limpa/app/data/providers/list_provider.dart';
 import 'package:obra_limpa/app/global_widgets/card_widget2.dart';
 import 'package:obra_limpa/app/modules/listing/listing_controller.dart';
-import 'package:obra_limpa/app/modules/listingRequests/listingRequests_controller.dart';
-import 'package:obra_limpa/app/services/dio_service.dart';
 
-class ListingRequestPage extends GetView<ListingRequestController> {
+class ListingRequestPage extends GetView<ListingController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,26 +11,27 @@ class ListingRequestPage extends GetView<ListingRequestController> {
       body: Obx(
         () => ListView.builder(
           itemBuilder: (BuildContext _, int index) {
+            var current = controller.demolistPendente[index];
             return CardWidget2(
-              cliente: controller.listRequest[index].cliente,
-              endereco: controller.listRequest[index].endereco,
-              entregue: () {},
+              cliente: current.cliente,
+              endereco: current.endereco,
+              entregue: () {
+                controller.finalizarrEntrega(_, current, index);
+              },
               cancelado: () {
-                controller.cancelListRequest(
-                    _, controller.listRequest[index], index);
+                controller.cancelarEntrega(_, current, index);
               },
               mapa: () {
-                controller.openMap(controller.listRequest[index].endereco);
+                controller.openMap(current.endereco);
               },
-              produto: controller.listRequest[index].produto,
-              telefone: controller.listRequest[index].telefone,
-              tipo: controller.listRequest[index].tipo,
-              total: controller.listRequest[index].total,
+              produto: current.produto,
+              telefone: current.telefone,
+              tipo: current.tipo,
+              total: current.total,
             );
           },
-          itemCount: controller.listRequest.length,
+          itemCount: controller.demolistPendente.length,
         ),
-        //Text(''),
       ),
     );
   }
