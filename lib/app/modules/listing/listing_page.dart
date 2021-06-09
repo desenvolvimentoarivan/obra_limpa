@@ -9,7 +9,11 @@ class ListingPage extends GetView<ListingController> {
     return Scaffold(
       backgroundColor: Color(0xFFF0F0F0),
       body: Obx(() {
-        print(controller.demolistAberto.length);
+        if (controller.loading) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }
         return ListView.builder(
           itemBuilder: (BuildContext context, int index) {
             var current = controller.demolistAberto[index];

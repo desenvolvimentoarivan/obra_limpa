@@ -9,6 +9,10 @@ import 'package:url_launcher/url_launcher.dart';
 class ListingController extends GetxController {
   final ListProvider provider;
   final _demolist = <DemoLista>[].obs;
+  final _loading = false.obs;
+
+  set loading(value) => _loading.value = value;
+  bool get loading => _loading.value;
 
   List<DemoLista> get demolist => this._demolist;
 
@@ -26,7 +30,9 @@ class ListingController extends GetxController {
   ListingController({@required this.provider}) : assert(provider != null);
 
   fetch() async {
+    loading = true;
     demolist = await provider.getAll();
+    loading = false;
   }
 
   takeDelivery(DemoLista demoLista) {
